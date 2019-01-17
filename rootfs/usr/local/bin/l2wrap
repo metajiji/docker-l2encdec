@@ -1,4 +1,4 @@
 #!/bin/sh
 
 EXE_NAME=$(basename "$0" .exe)
-find /srv/l2/*/${EXE_NAME}.exe -type f -exec wine {} \;
+find /srv/l2/*/${EXE_NAME}.exe -type f -exec wine {} $@ \;
