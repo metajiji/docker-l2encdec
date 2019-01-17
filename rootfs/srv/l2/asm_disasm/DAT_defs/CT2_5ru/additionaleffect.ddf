@@ -1,0 +1,20 @@
+FS = "\t";
+HEADER = 1;
+RECCNT = OFF;
+MTXCNT_OUT = 1;
+MATCNT_OUT = 1;
+ORD_IGNORE = 0;
+
+{
+	UINT val; //by METAJIJI 18:38 13.10.2010
+	ASCF name; //by METAJIJI 18:38 13.10.2010
+}
+
+/************************************
+METAJIJI (c) 2010
+
+Обратная связь:
+E-mail: METAJIJI@mail.ru
+ICQ: 317-306-196
+WEB: http://la2patch.ucoz.com
+*************************************/
