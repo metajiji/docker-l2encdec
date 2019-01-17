@@ -1,6 +1,7 @@
 FROM multiarch/alpine:x86-v3.8
 
 ENV WINEDEBUG=-all
+ENV L2_DDF_PATH=/srv/l2/asm_disasm/DAT_defs
 
 RUN apk --no-cache add wine ncurses freetype git
 RUN addgroup l2 && adduser -D -G l2 l2
