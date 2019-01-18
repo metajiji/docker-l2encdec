@@ -1,4 +1,9 @@
 #!/bin/sh
 
 EXE_NAME=$(basename "$0" .exe)
-find /srv/l2/*/${EXE_NAME}.exe -type f -exec wine {} $@ \;
+
+case $EXE_NAME in
+    l2asm|l2asm.exe|l2disasm|l2disasm.exe) wine /srv/l2/asm_disasm/${EXE_NAME}.exe $@ ;;
+    l2encdec|l2encdec.exe|loader|loader.exe|loaderCT1++|loaderCT1++.exe|patcher|patcher.exe) wine /srv/l2/enc_dec/${EXE_NAME}.exe $@ ;;
+    *) exit 255 ;;
+esac
