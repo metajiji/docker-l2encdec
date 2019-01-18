@@ -1,7 +1,7 @@
 stages:
   - build
 
-image:
+build:
   image: docker:git
   stage: build
   before_script:
