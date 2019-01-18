@@ -1,0 +1,27 @@
+FS = "\t";
+RECCNT = OFF;
+HEADER = YES;
+MTXCNT_OUT = YES;
+MATCNT_OUT = YES;
+MAGIC = 0;
+ORD_IGNORE = YES;
+
+{
+	UINT id;
+	UNICODE name;
+	CNTR cnt1;
+	INT tab1[cnt1];
+		SOFT = 3;
+	CNTR cnt2;
+	INT tab2[cnt2];
+		SOFT = 3;
+	UINT unk1;
+	UINT unk2;
+	MTX mshtex;
+		SOFTT = 7;
+		SOFTM = 2;
+	UNICODE sounds[5];
+	UINT snd2cnt;
+	UNICODE sounds2[snd2cnt];
+		SOFT = 3;
+}
