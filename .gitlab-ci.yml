@@ -4,17 +4,18 @@ stages:
 build:
   image: docker:git
   stage: build
-  before_script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
   script:
-    - >
-      docker build -t $CI_REGISTRY_IMAGE:latest \
-        --label "org.label-schema.vendor=Denis Kadyshev <metajiji@gmail.com>" \
-        --label "org.label-schema.name=l2encdec, l2asm & l2disasm in docker" \
-        --label "org.label-schema.schema-version=$CI_COMMIT_TAG" \
-        --label "org.label-schema.build-date=$(date +%Y%m%d)" \
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE:latest || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE:latest
+        -t $CI_REGISTRY_IMAGE:latest
+        -t $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+        --label "org.label-schema.vendor=Denis Kadyshev <metajiji@gmail.com>"
+        --label "org.label-schema.author=by M.Soltys (aka DStuff)"
+        --label "org.label-schema.name=l2encdec, l2asm & l2disasm in docker"
+        --label "org.label-schema.schema-version=$CI_COMMIT_TAG"
+        --label "org.label-schema.build-date=$(date +%Y%m%d)"
         $CI_PROJECT_DIR
-    - docker tag $CI_REGISTRY_IMAGE:latest $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
     - docker push $CI_REGISTRY_IMAGE:latest
   only:

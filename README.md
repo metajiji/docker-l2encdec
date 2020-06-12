@@ -1,14 +1,27 @@
-# Available commands
-```
-l2asm.exe, l2asm
-l2disasm.exe, l2disasm
-l2encdec.exe, l2encdec
-loader.exe, loader
-loaderCT1++.exe, loaderCT1++
-patcher.exe, patcher
-```
+# l2encdec and l2asm, l2disasm
 
-# Examples
-```
-docker run -v $(pwd):/data/system l2encdec -d 
+## Available commands
+
+L2 encoder/decoder version 2.10.1 by M.Soltys (aka DStuff).
+
+| Programm             | Alias                    |
+| -------------------- |:------------------------:|
+| `l2encdec`           | `l2encdec.exe`           |
+| `loader`             | `loader.exe`             |
+| `loaderCT1++`        | `loaderCT1++.exe`        |
+| `patcher`            | `patcher.exe`            |
+
+L2 asm 1.4.0 by M.Soltys (aka DStuff).
+
+| Programm             | Alias                    |
+| -------------------- |:------------------------:|
+| `l2asm`              | `l2asm.exe`              |
+| `l2disasm`           | `l2disasm.exe`           |
+
+## Examples
+
+Decrypt
+
+```bash
+docker run --rm -it -v "$(pwd)":/data/system metajiji/l2encdec l2encdec -d 
 ```
