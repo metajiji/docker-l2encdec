@@ -1,4 +1,4 @@
-FROM multiarch/alpine:x86-v3.10
+FROM multiarch/alpine:x86-v3.12
 
 ENV WINEDEBUG=-all
 ENV L2_DDF_PATH=/srv/l2/asm_disasm/DAT_defs
